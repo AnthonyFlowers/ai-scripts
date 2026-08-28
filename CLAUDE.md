@@ -13,6 +13,13 @@ This file describes the conventions to follow as scripts
 are added. Update it (especially the index below) when adding a script or
 introducing a language/toolchain for the first time.
 
+**Work stack:** the day job is a **LoopBack 4** codebase written in
+**TypeScript**. Prefer TypeScript for new scripts (see the Node/TypeScript
+convention below), and when a script is meant to understand or transform the
+work codebase, target LoopBack 4 (`@loopback/*`, decorator-and-DI style,
+`src/**` with `*.model.ts` / `*.repository.ts` / `*.controller.ts`), not
+LoopBack 3.
+
 ## Conventions
 
 - **One directory per script or tool** (`<name>/`), even for single-file

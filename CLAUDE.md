@@ -57,3 +57,12 @@ Keep this list current — one line per script: name, language, purpose.
 - `mcp-curl/mcp_curl.py` — Python, no deps. Introspects an MCP server (Streamable HTTP, legacy SSE, or stdio) and prints curl commands for every tool/resource/prompt with schema-derived example args; `--call`/`--rpc` execute directly. See `mcp-curl/README.md`.
 - `mcp-gen-client/mcp_gen_client.py` — Python, no deps. Generates a standalone Python client module for an MCP server: one typed function per tool, resource/prompt helpers, and a CLI; credentials become env-var lookups. Shares (duplicated, marker-delimited) transport code with mcp-curl. See `mcp-gen-client/README.md`.
 - `mcp-gen-cli/mcp_gen_cli.py` — Python, no deps. Generates a standalone one-shot CLI for an MCP server (`--lang bash` = curl+jq, `--lang python` = stdlib): every tool is a subcommand, every invocation is a full initialize→call→close exchange. Same embedded runtime as the other two. See `mcp-gen-cli/README.md`.
+- `token-report/token_report.py` — Python, no deps. Aggregates Claude Code token usage from local transcripts (`~/.claude/projects/**/*.jsonl`) per project/session/model/day; optional user-supplied $/Mtok rates for a cost column. See `token-report/README.md`.
+- `ctx-pack/ctx_pack.py` — Python, no deps. Shrinks logs/CI output before pasting into an LLM: strips ANSI, squashes blobs, collapses near-duplicate lines, `--errors-only` context extraction, `--max-tokens` budget; prints savings to stderr. Tests: `python3 ctx-pack/test_ctx_pack.py`. See `ctx-pack/README.md`.
+- `loopback-to-nest/lb2nest.py` — Python, no deps. Migrates a LoopBack 3 codebase to NestJS 12: `scan` prints a migration inventory + manual-attention checklist; `generate` scaffolds entities, DTOs (class-validator), services, controllers (CRUD + remote-method stubs), modules, a TypeORM `data-source.ts` from `datasources.json`, and a root `app.module.ts`. `--orm typeorm|none`. Tests: `python3 loopback-to-nest/test_lb2nest.py`. See `loopback-to-nest/README.md`.
+
+## Docs
+
+`docs/` holds repo-level markdown notes. `docs/script-recommendations.md`
+is the ranked backlog of scripts to build next (ordered by token-saving
+usefulness) — update it when a script gets built or priorities change.

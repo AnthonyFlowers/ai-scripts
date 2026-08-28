@@ -1,0 +1,15 @@
+{
+  "name": "ctx-pack",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "ctx-pack": "./ctx_pack.ts"
+  },
+  "scripts": {
+    "start": "tsx ctx_pack.ts",
+    "test": "tsx --test"
+  },
+  "devDependencies": {
+    "tsx": "^4"
+  }
+}

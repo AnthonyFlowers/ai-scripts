@@ -1,0 +1,14 @@
+{
+  "name": "token-report",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "token-report": "./token_report.ts"
+  },
+  "scripts": {
+    "start": "tsx token_report.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4"
+  }
+}
